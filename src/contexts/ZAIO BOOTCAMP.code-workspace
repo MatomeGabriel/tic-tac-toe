@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"name": "ZAIO BOOTCAMP",
+		"path": "../../.."
+	},
+	{
+		"path": "../../../../Udemy Javascript"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Udemy Javascript"
+  }
+}
