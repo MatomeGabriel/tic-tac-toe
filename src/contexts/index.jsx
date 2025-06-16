@@ -1,12 +1,14 @@
 import { ThemeContextProvider } from "./ThemeContext";
 import { GameContextProvider } from "./GameContext";
-import { ModalContextProvider } from "./ModalContext";
+import { SfxContextProvider } from "./SfxContext";
 
 const Provider = ({ children }) => {
   console.log(children);
   return (
     <ThemeContextProvider>
-      <GameContextProvider>{children}</GameContextProvider>
+      <GameContextProvider>
+        <SfxContextProvider>{children}</SfxContextProvider>
+      </GameContextProvider>
     </ThemeContextProvider>
   );
 };

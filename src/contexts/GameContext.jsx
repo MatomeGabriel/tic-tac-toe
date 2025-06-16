@@ -8,14 +8,14 @@ export const GameContextProvider = ({ children }) => {
     // ...existing code...,
     player1: {
       choice: "x",
-      name: "Gabriel",
+      name: "Player 1",
       score: 0,
       color: "#8437f9",
       avatarConfig: genConfig(),
     },
     player2: {
       choice: "o",
-      name: "Computer",
+      name: "Player 2",
       score: 0,
       color: "#f9c811",
       avatarConfig: genConfig(),
@@ -87,6 +87,29 @@ export const GameContextProvider = ({ children }) => {
     });
   };
 
+  const restartGame = () => {
+    setGame({
+      board: [null, null, null, null, null, null, null, null, null],
+      // ...existing code...,
+      player1: {
+        choice: "x",
+        name: "Player 1",
+        score: 0,
+        color: "#8437f9",
+        avatarConfig: genConfig(),
+      },
+      player2: {
+        choice: "o",
+        name: "Player 2",
+        score: 0,
+        color: "#f9c811",
+        avatarConfig: genConfig(),
+      },
+      turn: "x",
+      roundWinner: "",
+    });
+  };
+
   const toggleChoice = (choice) => (choice === "x" ? "o" : "x");
   const switchTurn = () => {
     setGame((prevGame) => ({
@@ -137,7 +160,15 @@ export const GameContextProvider = ({ children }) => {
 
   return (
     <GameContext.Provider
-      value={{ game, updateBoard, checkForWinner, resetBoard, roundComplete }}>
+      value={{
+        game,
+        updateBoard,
+        checkForWinner,
+        resetBoard,
+        roundComplete,
+        restartGame,
+      }}
+    >
       {children}
     </GameContext.Provider>
   );
