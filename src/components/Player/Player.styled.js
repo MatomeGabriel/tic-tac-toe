@@ -9,6 +9,8 @@ export const PLayerWrapper = styled.div`
 
   ${(props) => props.theme.media.mobile} {
     flex-direction: row;
+    margin: 4rem;
+
   }
 `;
 
@@ -18,5 +20,13 @@ export const AvatarWrapper = styled.div`
     width: 10rem;
     height: 10rem;
     filter: ${(props) => (props.isPlayerActive ? "" : "grayscale(100%)")};
+
+    ${(props) => props.theme.media.mobile} {
+      flex-direction: row;
+      margin: 4rem;
+      width: 8rem;
+      height: 8rem;
+    }
+
   }
 `;
