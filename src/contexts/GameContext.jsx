@@ -9,13 +9,17 @@ export const GameContextProvider = ({ children }) => {
     player1: {
       choice: "x",
       name: "Player 1",
+
+
       score: 0,
       color: "#8437f9",
       avatarConfig: genConfig(),
     },
     player2: {
       choice: "o",
+
       name: "Player 2",
+
       score: 0,
       color: "#f9c811",
       avatarConfig: genConfig(),
@@ -86,6 +90,7 @@ export const GameContextProvider = ({ children }) => {
       turn: "x",
     });
   };
+
 
   const restartGame = () => {
     setGame({
@@ -169,6 +174,7 @@ export const GameContextProvider = ({ children }) => {
         restartGame,
       }}
     >
+
       {children}
     </GameContext.Provider>
   );

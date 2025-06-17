@@ -1,3 +1,4 @@
+
 import { PLayerWrapper, AvatarWrapper } from "./Player.styled";
 import Avatar from "react-nice-avatar";
 import { Subtitle } from "../../styles/General.styled";

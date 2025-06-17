@@ -9,6 +9,7 @@ import { ModalContext } from "../../../contexts/ModalContext";
 import RoundOverModal from "../../../components/Modals/RoundOverModals/RoundOverModal";
 import { SfxContext } from "../../../contexts/SfxContext";
 
+
 const GameCell = ({ cellItem, index }) => {
   const { updateBoard, game, checkForWinner, roundComplete } =
     useContext(GameContext);
@@ -17,6 +18,7 @@ const GameCell = ({ cellItem, index }) => {
     useContext(SfxContext);
   const { handleModal } = useContext(ModalContext);
   const cellClickHandler = () => {
+
     // this index is retained by the function scope, this happens because of something known as closure.
     updateBoard(index);
     const result = checkForWinner(game.board);
@@ -27,6 +29,7 @@ const GameCell = ({ cellItem, index }) => {
       } else {
         completedSfx();
       }
+
       handleModal(<RoundOverModal />);
     }
   };

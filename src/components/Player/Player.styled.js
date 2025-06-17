@@ -10,6 +10,7 @@ export const PLayerWrapper = styled.div`
   ${(props) => props.theme.media.mobile} {
     flex-direction: row;
     margin: 4rem;
+
   }
 `;
 
@@ -26,5 +27,6 @@ export const AvatarWrapper = styled.div`
       width: 8rem;
       height: 8rem;
     }
+
   }
 `;

@@ -2,6 +2,7 @@ import { ThemeContextProvider } from "./ThemeContext";
 import { GameContextProvider } from "./GameContext";
 import { SfxContextProvider } from "./SfxContext";
 
+
 const Provider = ({ children }) => {
   console.log(children);
   return (

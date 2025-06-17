@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Game from "./pages/Game/Game";
 import Details from "./pages/Details/Details";
 import Header from "./components/Header/Header";
+
 import { ModalContextProvider } from "./contexts/ModalContext";
 
 const Router = () => {

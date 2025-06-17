@@ -20,7 +20,9 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: ${(props) =>
     props.primary ? props.theme.colors.primary : props.theme.colors.text};
+
   font-size: 4rem;
+
   background-color: transparent;
   font-family: "Pacifico", cursive;
 
