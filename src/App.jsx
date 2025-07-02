@@ -5,6 +5,7 @@ import { lightTheme, darkTheme } from "./styles/theme";
 import { useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { ModalContextProvider } from "./contexts/ModalContext";
+import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -15,6 +16,7 @@ const App = () => {
       <ModalContextProvider>
         <GlobalStyle />
         <Router />
+        <MusicPlayer />
       </ModalContextProvider>
     </ThemeProvider>
   );

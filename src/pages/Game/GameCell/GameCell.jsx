@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { CellStyle } from "./GameCell.styled";
 import { GameContext } from "../../../contexts/GameContext";
 import IconX from "../../../assets/icon-x.svg?react";
@@ -9,7 +9,8 @@ import { ModalContext } from "../../../contexts/ModalContext";
 import RoundOverModal from "../../../components/Modals/RoundOverModals/RoundOverModal";
 import { SfxContext } from "../../../contexts/SfxContext";
 
-const GameCell = ({ cellItem, index }) => {
+const GameCell = ({ cellItem, index, isWinningCell }) => {
+  console.log("Is Winning Cell :", isWinningCell);
   const { updateBoard, game, checkForWinner, roundComplete } =
     useContext(GameContext);
 
@@ -20,30 +21,28 @@ const GameCell = ({ cellItem, index }) => {
     // this index is retained by the function scope, this happens because of something known as closure.
     updateBoard(index);
     const result = checkForWinner(game.board);
+    console.log(result);
     if (result) {
       roundComplete(result);
       if (result != "draw") {
         winnerSfx();
-      } else {
-        completedSfx();
       }
-
-      handleModal(<RoundOverModal />);
+      setTimeout(() => handleModal(<RoundOverModal />), 2500);
     }
   };
 
-  // happens after re-redner / when a user has clicked one of the cells
+  // happens after re-render / when a user has clicked one of the cells
   // it replaces the cell with an icon and removes the event listener as well
   // meaning we can only select once
   if (cellItem === "x") {
     return (
-      <CellStyle>
+      <CellStyle isWinningCell={isWinningCell ?? false}>
         <IconX className="markedItem" />
       </CellStyle>
     );
   } else if (cellItem === "o") {
     return (
-      <CellStyle>
+      <CellStyle isWinningCell={isWinningCell ?? false}>
         <IconO className="markedItem" />
       </CellStyle>
     );

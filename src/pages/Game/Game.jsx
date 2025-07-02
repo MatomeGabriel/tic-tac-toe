@@ -8,6 +8,7 @@ import Player from "../../components/Player/Player";
 const Game = () => {
   const { game } = useContext(GameContext);
   const { board } = game;
+
   return (
     <Container>
       <Player
@@ -16,7 +17,12 @@ const Game = () => {
       />
       <GameBoardStyle>
         {board.map((cellItem, index) => (
-          <GameCell key={index} cellItem={cellItem} index={index} />
+          <GameCell
+            key={index}
+            cellItem={cellItem}
+            index={index}
+            isWinningCell={game?.winningCombo?.includes(index)}
+          />
         ))}
       </GameBoardStyle>
       <Player
